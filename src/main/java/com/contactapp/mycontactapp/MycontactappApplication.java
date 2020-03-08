@@ -14,8 +14,8 @@ import com.contactapp.mycontactapp.domain.Contact;
 @SpringBootApplication
 public class MycontactappApplication implements CommandLineRunner {
 
-	@Autowired
-	private Contact contact;
+	
+	private Contact contact = new Contact();
 
 	@Autowired
 	@Qualifier("mydao")
