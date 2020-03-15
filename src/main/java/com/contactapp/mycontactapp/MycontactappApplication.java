@@ -14,9 +14,6 @@ import com.contactapp.mycontactapp.domain.Contact;
 @SpringBootApplication
 public class MycontactappApplication implements CommandLineRunner {
 
-	
-	private Contact contact = new Contact();
-
 	@Autowired
 	@Qualifier("mydao")
 	private ContactDao dao;
@@ -27,19 +24,15 @@ public class MycontactappApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		contact.setName("Rajesh");
-		contact.setNumber("9483685398");
-		dao.addContact(contact);
-		contact.setName("Ramesh");
-		contact.setNumber("9483685399");
-		dao.addContact(contact);
-		contact.setName("Rakesh");
-		contact.setNumber("9483685310");
-		dao.addContact(contact);
+		Contact c1 = new Contact("Rajesh", "7485415240");
+		Contact c2 = new Contact("Lakshaman", "7485967485");
+		dao.addContact(c1);
+		dao.addContact(c2);
 
 		List<Contact> list = dao.getAllContacts();
 
-		System.out.println(list);
+		for (Contact c : list)
+			c.displayContact();
 
 	}
 
