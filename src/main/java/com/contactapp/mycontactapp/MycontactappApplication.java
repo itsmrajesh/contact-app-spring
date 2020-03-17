@@ -15,7 +15,6 @@ import com.contactapp.mycontactapp.domain.Contact;
 public class MycontactappApplication implements CommandLineRunner {
 
 	@Autowired
-	@Qualifier("mydao")
 	private ContactDao dao;
 
 	public static void main(String[] args) {
@@ -24,8 +23,8 @@ public class MycontactappApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Contact c1 = new Contact("Rajesh", "7485415240");
-		Contact c2 = new Contact("Lakshaman", "7485967485");
+		Contact c1 = new Contact("Lakshman", "7485967485");
+		Contact c2 = new Contact("Rajesh", "7485415240");
 		dao.addContact(c1);
 		dao.addContact(c2);
 
