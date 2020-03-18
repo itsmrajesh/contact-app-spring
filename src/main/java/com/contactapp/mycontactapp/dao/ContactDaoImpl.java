@@ -10,9 +10,6 @@ import com.contactapp.mycontactapp.domain.Contact;
 @Component
 public class ContactDaoImpl implements ContactDao {
 	
-	public ContactDaoImpl() {
-		System.out.println("----------ContactDaoImpl..........................................");
-	}
 
 	private List<Contact> contacts = new ArrayList<>();
 

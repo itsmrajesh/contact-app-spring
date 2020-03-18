@@ -1,6 +1,7 @@
 package com.contactapp.mycontactapp.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,9 +18,6 @@ public class Contact {
 	private String number;
 	private int id;
 
-	@Autowired
-	private IDGenerator idGenerator;
-
 	public void displayContact() {
 		System.out.println("ID : " + id);
 		System.out.println("Name : " + name);
@@ -29,7 +27,7 @@ public class Contact {
 
 	public Contact(String name, String number) {
 		super();
-		this.id = idGenerator.getID();
+		this.id = IDGenerator.getID();
 		this.name = name;
 		this.number = number;
 	}
